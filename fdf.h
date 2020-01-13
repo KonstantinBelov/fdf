@@ -16,11 +16,27 @@
 # include "get_next_line.h"
 # include "minilibx_macos/mlx.h"
 
-typedef	struct	s_state
+typedef	struct	s_fdf
 {
 	int     width;
     int     height;
     int     **map;
+    int     zoom;
+    int     color;
+    int     shift_x;
+    int     shift_y;
+    float   projection;
+    int     elevation;
+
+    void    *mlx_ptr;
+    void    *win_ptr;
 }				t_fdf;
+
+int		        deal_key(int key, t_fdf *f);
+void	        prepare(char *file_name, t_fdf *f);
+void			read_file(char *file_name, t_fdf *f);
+void            projection(float *x, float *y, int z, t_fdf *f);
+void			bresenham(float x, float y, float x1, float y1, t_fdf *f);
+void			draw(t_fdf *f);
 
 #endif
