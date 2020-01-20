@@ -22,7 +22,7 @@ char		**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s || !(strs = (char **)malloc(sizeof(*strs) * ft_strsplit_len(s, c))))
+	if (!s || !(strs = (char **)malloc(sizeof(*strs) * (strspllen(s, c) + 1))))
 		return (NULL);
 	while (s[i] != '\0')
 	{

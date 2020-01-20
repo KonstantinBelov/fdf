@@ -117,4 +117,7 @@ char				*ft_itoa_base(int value, int base);
 int					ft_itoa_base2(int *sign, int *value, int *n, int *base);
 char				*ft_ullitoa_base(unsigned long long value, int base);
 char				*ft_ftoa(long double n);
+
+size_t				strspllen(char const *s, char c);
+
 #endif
